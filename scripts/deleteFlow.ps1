@@ -8,4 +8,4 @@ $FlowName = $args[1] + '.flowDefinition-meta.xml'
 Rename-Item -Path 'cd\deactivateFlow\Flow_Name.flowDefinition-meta.xml' -NewName "$FlowName"
 $FlowPath = 'cd\deactivateFlow\' + $FlowName
 sfdx force:source:deploy -p "$FlowPath"
-git reset .
+Rename-Item -Path ('cd\deactivateFlow\' + $FlowName) -NewName 'Flow_Name.flowDefinition-meta.xml'
