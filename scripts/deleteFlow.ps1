@@ -6,3 +6,6 @@ sfdx force:apex:execute -f scripts\deleteFlowInterviews.apex
 Remove-Item scripts\deleteFlowInterviews.apex
 $FlowName = $args[1] + '.flowDefinition-meta.xml'
 Rename-Item -Path 'cd\deactivateFlow\Flow_Name.flowDefinition-meta.xml' -NewName "$FlowName"
+$FlowPath = 'cd\deactivateFlow\' + $FlowName
+sfdx force:source:deploy -p "$FlowPath"
+git reset .
