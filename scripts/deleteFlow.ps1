@@ -3,3 +3,4 @@ $apexScript = (Get-Content -path scripts\deleteFlowInterviewsTemplate.apex -Raw)
 New-Item scripts\deleteFlowInterviews.apex
 Set-Content scripts\deleteFlowInterviews.apex "$apexScript"
 sfdx force:apex:execute -f scripts\deleteFlowInterviews.apex
+Remove-Item scripts\deleteFlowInterviews.apex
