@@ -1,0 +1,1 @@
+delete [select Id FROM FlowInterview WHERE InterviewLabel Like '__FLOW_NAME__ %/%/%, %'];
